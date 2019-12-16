@@ -16,7 +16,7 @@ pipeline {
        // }
         stage('Test') {
             steps {
-                  withSonarQubeEnv('GLW SonarQube Server') {
+                  withSonarQubeEnv('Sonarqube') {
                 sh 'mvn sonar:sonar'
                   }
             }
