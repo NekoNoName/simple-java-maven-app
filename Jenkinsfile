@@ -9,11 +9,11 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-        stage('Build') {
-            steps {
-                sh 'mvn -B -DskipTests clean package'
-            }
-        }
+       // stage('Build') {
+         //   steps {
+           //     sh 'mvn -B -DskipTests clean package'
+            //}
+       // }
         stage('Test') {
             steps {
                   withSonarQubeEnv('GLW SonarQube Server') {
@@ -22,10 +22,10 @@ pipeline {
             }
             
         }
-        stage('Deliver') { 
-            steps {
-                sh './jenkins/scripts/deliver.sh' 
-            }
-        }
+        //stage('Deliver') { 
+         //   steps {
+          //      sh './jenkins/scripts/deliver.sh' 
+           // }
+       // }
     }
 }
